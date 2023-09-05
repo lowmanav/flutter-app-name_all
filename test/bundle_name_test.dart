@@ -1,11 +1,10 @@
-import "package:test/test.dart";
-
-import "package:flutter_app_name/context.dart";
-import "package:flutter_app_name/ios.dart" as ios;
-import "package:flutter_app_name/android.dart" as android;
+import 'package:flutter_app_name/android.dart' as android;
+import 'package:flutter_app_name/context.dart';
+import 'package:flutter_app_name/ios.dart' as ios;
+import 'package:test/test.dart';
 
 void main() {
-  final String androidManifest = """
+  const String androidManifest = """
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fextoolkit_app">
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -39,7 +38,7 @@ void main() {
 </manifest>
   """;
 
-  final String androidManifestUpdated = """
+  const String androidManifestUpdated = """
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fextoolkit_app">
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -73,7 +72,8 @@ void main() {
 </manifest>
   """;
 
-  final String iosPlist = r"""<?xml version="1.0" encoding="UTF-8"?>
+  const String iosPlist = r'''
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -120,9 +120,10 @@ void main() {
 	<false/>
 </dict>
 </plist>
-  """;
+  ''';
 
-  final String iosPlistUpdated = r"""<?xml version="1.0" encoding="UTF-8"?>
+  const String iosPlistUpdated = r'''
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -169,16 +170,16 @@ void main() {
 	<false/>
 </dict>
 </plist>
-  """;
+  ''';
 
-  final context = Context(
-    yamlKeyName: "flutter_app_name",
-    pubspecPath: "test/test_pubspec_good.yaml",
-    infoPlistPath: "ios/Runner/Info.plist",
-    androidManifestPath: "android/app/src/main/AndroidManifest.xml",
+  final Context context = Context(
+    yamlKeyName: 'flutter_app_name',
+    pubspecPath: 'test/test_pubspec_good.yaml',
+    infoPlistPath: 'ios/Runner/Info.plist',
+    androidManifestPath: 'android/app/src/main/AndroidManifest.xml',
   );
 
-  test("Android", () {
+  test('Android', () {
     expect(
       android.fetchCurrentBundleName(context, androidManifest),
       equals('android:label="Flutter App Name"'),
@@ -186,12 +187,16 @@ void main() {
 
     expect(
       android.setNewBundleName(
-          context, androidManifest, 'android:label="Flutter App Name"', "Test"),
+        context,
+        androidManifest,
+        'android:label="Flutter App Name"',
+        'Test',
+      ),
       equals(androidManifestUpdated),
     );
   });
 
-  test("iOS", () {
+  test('iOS', () {
     expect(
       ios.fetchCurrentBundleName(context, iosPlist),
       equals('<string>Flutter App Name</string>'),
@@ -199,7 +204,11 @@ void main() {
 
     expect(
       ios.setNewBundleName(
-          context, iosPlist, '<string>Flutter App Name</string>', "Test"),
+        context,
+        iosPlist,
+        '<string>Flutter App Name</string>',
+        'Test',
+      ),
       equals(iosPlistUpdated),
     );
   });
