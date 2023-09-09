@@ -1,12 +1,11 @@
-import 'package:flutter_app_name/common.dart' as common;
-import 'package:flutter_app_name/context.dart';
+import 'package:flutter_app_name_all/common.dart' as common;
+import 'package:flutter_app_name_all/context.dart';
 import 'package:xml/xml.dart';
 
 String fetchCurrentBundleName(Context context, String manifestFileData) {
   final XmlDocument parsed = XmlDocument.parse(manifestFileData);
 
-  final XmlElement application =
-      parsed.findAllElements('application').toList()[0];
+  final XmlElement application = parsed.findAllElements('application').toList()[0];
 
   final List<String> label = application.attributes
       .where(
@@ -39,8 +38,7 @@ String setNewBundleName(
 void updateLauncherName(Context context) {
   final String manifestFileData = common.readFile(context.androidManifestPath);
   final String desiredBundleName = common.fetchLauncherName(context);
-  final String currentBundleName =
-      fetchCurrentBundleName(context, manifestFileData);
+  final String currentBundleName = fetchCurrentBundleName(context, manifestFileData);
   final String updatedManifestData = setNewBundleName(
     context,
     manifestFileData,

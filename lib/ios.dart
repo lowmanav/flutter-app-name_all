@@ -1,5 +1,5 @@
-import 'package:flutter_app_name/common.dart' as common;
-import 'package:flutter_app_name/context.dart';
+import 'package:flutter_app_name_all/common.dart' as common;
+import 'package:flutter_app_name_all/context.dart';
 import 'package:xml/xml.dart';
 
 String fetchCurrentBundleName(Context context, String plistFileData) {
@@ -41,8 +41,7 @@ String setNewBundleName(
 void updateLauncherName(Context context) {
   final String plistFileData = common.readFile(context.infoPlistPath);
   final String desiredBundleName = common.fetchLauncherName(context);
-  final String currentBundleName =
-      fetchCurrentBundleName(context, plistFileData);
+  final String currentBundleName = fetchCurrentBundleName(context, plistFileData);
   final String updatedPlistData = setNewBundleName(
     context,
     plistFileData,

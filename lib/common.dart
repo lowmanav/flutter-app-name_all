@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flutter_app_name/context.dart';
+import 'package:flutter_app_name_all/context.dart';
 import 'package:yaml/yaml.dart';
 
 String readFile(String filePath) {

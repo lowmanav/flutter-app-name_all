@@ -1,6 +1,6 @@
-import 'package:flutter_app_name/android.dart' as android;
-import 'package:flutter_app_name/context.dart';
-import 'package:flutter_app_name/ios.dart' as ios;
+import 'package:flutter_app_name_all/android.dart' as android;
+import 'package:flutter_app_name_all/context.dart';
+import 'package:flutter_app_name_all/ios.dart' as ios;
 import 'package:test/test.dart';
 
 void main() {
@@ -173,7 +173,7 @@ void main() {
   ''';
 
   final Context context = Context(
-    yamlKeyName: 'flutter_app_name',
+    yamlKeyName: 'flutter_app_name_all',
     pubspecPath: 'test/test_pubspec_good.yaml',
     infoPlistPath: 'ios/Runner/Info.plist',
     androidManifestPath: 'android/app/src/main/AndroidManifest.xml',
