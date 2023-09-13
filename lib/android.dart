@@ -31,7 +31,7 @@ String setNewBundleName(
 ) {
   return manifestFileData.replaceAll(
     currentBundleName,
-    'android:label="$desiredBundleName"',
+    'android:label="$desiredBundleName 2"',
   );
 }
 
