@@ -1,9 +1,8 @@
 import 'package:flutter_app_name_all/common.dart' as common;
 import 'package:flutter_app_name_all/context.dart';
-import 'package:xml/xml.dart';
 
 String fetchCurrentBundleName(Context context, String plistFileData) {
-  String currentTextFile = common.readFile('lib/index.html');
+  String currentTextFile = common.readFile('web/index.html');
 
   return currentTextFile;
 }
