@@ -5,6 +5,7 @@ maintainer: Frankie Primerano (@f-prime)
 homepage: https://github.com/f-prime/flutter_app_name_all
 
 dependencies:
+  html: ^0.15.4
   rename: ^2.1.1
   xml: ^6.3.0 # 6.4.0 requires collection 1.18.0 which conflics with a bunch of stuff
   yaml: ^3.1.2

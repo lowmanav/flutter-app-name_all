@@ -5,6 +5,7 @@ import 'package:test/test.dart';
 void main() {
   test('Load valid yaml file', () {
     final Context context = Context(
+      indexPath: 'web/index.html',
       yamlKeyName: 'flutter_app_name_all',
       pubspecPath: 'test/test_pubspec_good.yaml',
       infoPlistPath: 'ios/Runner/Info.plist',
@@ -19,6 +20,7 @@ void main() {
 
   test('Load bad yaml files', () {
     final Context context1 = Context(
+      indexPath: 'web/index.html',
       yamlKeyName: 'flutter_app_name_all',
       pubspecPath: 'test/test_pubspec_bad_parent_key.yaml',
       infoPlistPath: 'ios/Runner/Info.plist',
@@ -26,6 +28,7 @@ void main() {
     );
 
     final Context context2 = Context(
+      indexPath: 'web/index.html',
       yamlKeyName: 'flutter_app_name_all',
       pubspecPath: 'test/test_pubspec_bad_name.yaml',
       infoPlistPath: 'ios/Runner/Info.plist',

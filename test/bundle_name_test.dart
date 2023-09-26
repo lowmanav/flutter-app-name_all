@@ -173,6 +173,7 @@ void main() {
   ''';
 
   final Context context = Context(
+    indexPath: 'web/index.html',
     yamlKeyName: 'flutter_app_name_all',
     pubspecPath: 'test/test_pubspec_good.yaml',
     infoPlistPath: 'ios/Runner/Info.plist',
