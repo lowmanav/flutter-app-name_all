@@ -49,5 +49,5 @@ void updateLauncherName(Context context) {
     desiredBundleName,
   );
 
-  common.overwriteFile(context.indexPath, updatedManifestJsonData);
+  common.overwriteFile(context.webManifestPath, updatedManifestJsonData);
 }
