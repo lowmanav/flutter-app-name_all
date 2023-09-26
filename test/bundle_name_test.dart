@@ -179,6 +179,7 @@ void main() {
     pubspecPath: 'test/test_pubspec_good.yaml',
     infoPlistPath: 'ios/Runner/Info.plist',
     androidManifestPath: 'android/app/src/main/AndroidManifest.xml',
+    androidBuildGradletPath: 'android/app/build.gradle',
   );
 
   test('Android', () {

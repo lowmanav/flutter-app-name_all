@@ -33,21 +33,21 @@ void updateLauncherName(Context context) {
   final String desiredBundleName = common.fetchLauncherName(context);
   final String currentBundleName = fetchCurrentBundleName(context, indexFileData);
 
+  /// Changed web/index.html
   final String updatedIndexData = setNewBundleName(
     context,
     indexFileData,
     currentBundleName,
     desiredBundleName,
   );
-
   common.overwriteFile(context.indexPath, updatedIndexData);
 
+  /// Changed web/manifest.json
   final String updatedManifestJsonData = setNewBundleName(
     context,
     manifestJsonFileData,
     currentBundleName,
     desiredBundleName,
   );
-
   common.overwriteFile(context.webManifestPath, updatedManifestJsonData);
 }

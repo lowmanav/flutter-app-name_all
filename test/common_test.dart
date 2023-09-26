@@ -11,6 +11,7 @@ void main() {
       pubspecPath: 'test/test_pubspec_good.yaml',
       infoPlistPath: 'ios/Runner/Info.plist',
       androidManifestPath: 'android/app/src/main/AndroidManifest.xml',
+      androidBuildGradletPath: 'android/app/build.gradle',
     );
 
     expect(
@@ -27,6 +28,7 @@ void main() {
       pubspecPath: 'test/test_pubspec_bad_parent_key.yaml',
       infoPlistPath: 'ios/Runner/Info.plist',
       androidManifestPath: 'android/app/src/main/AndroidManifest.xml',
+      androidBuildGradletPath: 'android/app/build.gradle',
     );
 
     final Context context2 = Context(
@@ -36,6 +38,7 @@ void main() {
       pubspecPath: 'test/test_pubspec_bad_name.yaml',
       infoPlistPath: 'ios/Runner/Info.plist',
       androidManifestPath: 'android/app/src/main/AndroidManifest.xml',
+      androidBuildGradletPath: 'android/app/build.gradle',
     );
 
     expect(() => fetchLauncherName(context1), throwsA(isA<Exception>()));

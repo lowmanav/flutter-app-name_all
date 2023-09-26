@@ -16,6 +16,7 @@ void run() {
     pubspecPath: 'pubspec.yaml',
     infoPlistPath: 'ios/Runner/Info.plist',
     androidManifestPath: 'android/app/src/main/AndroidManifest.xml',
+    androidBuildGradletPath: 'android/app/build.gradle',
   );
 
   ios.updateLauncherName(context);

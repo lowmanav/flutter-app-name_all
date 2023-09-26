@@ -37,14 +37,24 @@ String setNewBundleName(
 
 void updateLauncherName(Context context) {
   final String manifestFileData = common.readFile(context.androidManifestPath);
+  final String buildGradleFileData = common.readFile(context.androidBuildGradletPath);
+
   final String desiredBundleName = common.fetchLauncherName(context);
   final String currentBundleName = fetchCurrentBundleName(context, manifestFileData);
+
   final String updatedManifestData = setNewBundleName(
     context,
     manifestFileData,
     currentBundleName,
     desiredBundleName,
   );
-
   common.overwriteFile(context.androidManifestPath, updatedManifestData);
+
+  final String updatedBuildGradletPathData = setNewBundleName(
+    context,
+    buildGradleFileData,
+    currentBundleName,
+    desiredBundleName,
+  );
+  common.overwriteFile(context.androidBuildGradletPath, updatedBuildGradletPathData);
 }
