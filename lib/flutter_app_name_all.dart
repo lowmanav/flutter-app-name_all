@@ -11,6 +11,7 @@ import 'package:rename/rename.dart';
 void run() {
   final Context context = Context(
     indexPath: 'web/index.html',
+    webManifestPath: 'web/manifest.json',
     yamlKeyName: 'flutter_app_name_all',
     pubspecPath: 'pubspec.yaml',
     infoPlistPath: 'ios/Runner/Info.plist',

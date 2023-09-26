@@ -1,5 +1,6 @@
 class Context {
   final String indexPath;
+  final String webManifestPath;
   final String infoPlistPath;
   final String androidManifestPath;
   final String pubspecPath;
@@ -7,6 +8,7 @@ class Context {
 
   Context({
     required this.indexPath,
+    required this.webManifestPath,
     required this.yamlKeyName,
     required this.androidManifestPath,
     required this.pubspecPath,
